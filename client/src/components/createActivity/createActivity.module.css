@@ -1,0 +1,48 @@
+.contenedorForm {
+
+    background: #111;
+    padding: 3vh;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 380px;
+    margin: auto;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    gap: 15px;
+
+}
+
+.contenedorForm input {
+
+    width: 70%;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.contenedorForm select {
+
+    width: 70%;
+    border-radius: 5px;
+}
+
+.contenedorForm__Paises {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+}
+
+.contenedorForm__Button {
+
+    background: rgb(12,45,97);
+    background: linear-gradient(140deg, rgba(12,45,97,1) 0%, rgba(12,67,129,1) 35%, rgb(71, 104, 175) 100%);
+    color: white;
+    border-radius: 5px;
+    border: transparent;
+    width: 8vw;
+    height: 6vh;
+}

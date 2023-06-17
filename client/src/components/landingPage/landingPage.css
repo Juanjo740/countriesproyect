@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+
+.fondoLanding {
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://fotos.perfil.com/2020/04/06/0604montanismotrekkingsenderismo-936017.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: cambio-imagenes;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cambio-imagenes {
+
+    0% {background-image: url("https://fotos.perfil.com/2020/04/06/0604montanismotrekkingsenderismo-936017.jpg");}
+    20% {background-image: url("https://www.nationalgeographic.com.es/medio/2022/09/16/selva-tropical-amazonica-ecuador_135ea5a5_1280x853.jpg");}
+    40% {background-image: url("https://cnnespanol.cnn.com/wp-content/uploads/2023/02/https___cdn.cnn_.com_cnnnext_dam_assets_230224150645-01-best-beaches-world-tripadvisor-2023-card.jpg?quality=100&strip=info");}
+    60% {background-image: url("https://cdn0.ecologiaverde.com/es/posts/9/3/2/animales_de_la_sabana_africana_1239_orig.jpg");}
+    80% {background-image: url("https://cdn.bioguia.com/embed/f74e495a60d4ac5500d27c7f8de9ec2011558356834/los-8-sitios-mas-hermosos-mundo.jpg");}
+   
+    
+  }
+
+.contenedorComenzar {
+
+    
+    width: 30%;
+    height: 80px;
+    min-width: 180px;
+    max-width: 240px;
+    background-color: #111;
+    margin: auto;
+    margin-top: 43vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorText {
+
+    margin-top: 27px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+.reservaColores {
+
+    background: rgb(12,45,97);
+    background: linear-gradient(140deg, rgba(12,45,97,1) 0%, rgba(12,67,129,1) 35%, rgb(71, 104, 175) 100%);
+}
