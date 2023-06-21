@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import ActivityCard from '../activityCard/activityCard';
+import style from './activitiesPage.module.css'
 
 const ActivitiesPage = () => {
 
@@ -9,30 +10,32 @@ const ActivitiesPage = () => {
     return (
 
         <div className='contenedor'>
+
+            <div className={style.contenedorActivities}>
             
-            <h1>Activities Page</h1>
-            
-            {
-                allactivities.map(({name, dificult, duration, season, countries}) => {
+                {
+                    allactivities.map(({name, dificult, duration, season, countries}) => {
 
-                    return(
+                        return(
 
-                        <div>
+                            <div>
 
-                            <ActivityCard
+                                <ActivityCard
 
-                                name={name}
-                                dificult={dificult}
-                                duration={duration}
-                                season={season}
-                                countries={countries}
+                                    name={name}
+                                    dificult={dificult}
+                                    duration={duration}
+                                    season={season}
+                                    countries={countries}
 
-                            />
+                                />
 
-                        </div>
-                    )
-                })
-            }
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
 
         </div>
 

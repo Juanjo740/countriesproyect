@@ -1,0 +1,26 @@
+
+
+.contenedorSearchBar {
+
+    background-color: #111;
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.contenedorSearchBar button {
+
+    background: rgb(12,45,97);
+    background: linear-gradient(140deg, rgba(12,45,97,1) 0%, rgba(12,67,129,1) 35%, rgb(71, 104, 175) 100%);
+    border: solid 0px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.contenedorSearchBar input {
+
+    border: solid 0px;
+    border-radius: 4px;
+    padding: 10px;
+}

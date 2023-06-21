@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import CountryCard from '../countryCard/countryCard'
-import "./homePage.css"
+import SearchBar from '../searchBar/searchBar';
+import FilterBar from '../filterBar/filterBar';
+import style from './HomePage.module.css'
 
 const countriesPerPage = 12
 const threshold = 2
@@ -17,45 +19,59 @@ const HomePage = () => {
     return (
 
         <div className='contenedor'>
-            
-            <button onClick={() => setPage(prev => --prev)}>Atras</button>
+           
+            <div className={style.contenedor}>
 
-            <div>
+                
+                <SearchBar />
+                <FilterBar />
 
-                {
-                    Array.from({ length: totalPages}).map((_, i) => {
+                <div className={style.contenedorPaginado}>
+                    
+                    <button onClick={() => setPage(prev => --prev)}>Atras</button>
 
-                        if(i < page - threshold || i > page + threshold) return
 
-                        return <button onClick={() => setPage(i)}>{i + 1}</button>
+                        {
+                            Array.from({ length: totalPages}).map((_, i) => {
+                                
+                                if(i < page - threshold || i > page + threshold) return
+                                
+                                return <button onClick={() => setPage(i)}>{i + 1}</button>
+                                
+                            })
+                        }
 
-                    })
-                }
+
+                    <button onClick={() => setPage(prev => ++prev)}>Adelante</button>
+
+                </div>
+
+                <div className={style.contenedorCards}>
+
+                    {
+                        allcountries.slice(countriesPerPage * page, (countriesPerPage * page) + countriesPerPage).map(({id, name, continents, capital, flags})=>{
+                            return(
+                                
+                                <CountryCard
+                                
+                                id={id}
+                                key={id+' '+name}
+                                name={name}
+                                continents={continents}
+                                capital={capital}
+                                flags={flags}
+                                />
+                                
+                                )
+                            })
+                        }
+                
+                </div>
 
             </div>
 
-            <button onClick={() => setPage(prev => ++prev)}>Adelante</button>
-
-            {
-                allcountries.slice(countriesPerPage * page, (countriesPerPage * page) + countriesPerPage).map(({id, name, continents, capital, flags})=>{
-                    return(
-                        
-                        <CountryCard
-                            
-                            id={id}
-                            key={id+' '+name}
-                            name={name}
-                            continents={continents}
-                            capital={capital}
-                            flags={flags}
-                        />
-                        
-                    )
-                })
-            }
-
         </div>
-
+    
     )
 }
 

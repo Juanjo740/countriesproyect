@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCountryByName } from '../../redux/countrySlice'
 import axios from 'axios';
+import style from './searchBar.module.css'
 
 const SearchBar = () => {
     
@@ -46,7 +47,7 @@ const SearchBar = () => {
 
     return (
     
-            <div className="contenedor">
+            <div className={style.contenedorSearchBar}>
                 
                 <input placeholder="Buscar pais" type="search" value={search} onChange={handleChange} />
                 <button onClick = {error ? null : () => handleSearch(search)}>🔎</button>

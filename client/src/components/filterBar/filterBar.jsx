@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { filterByContinent, orderAlfabetic, orderByPopulation } from '../../redux/countrySlice'
-import styles from "./filterBar.module.css"
+import style from "./filterBar.module.css"
 
 const FilterBar = () => {
 
@@ -29,7 +29,7 @@ const FilterBar = () => {
 
     return(
 
-        <div className="contenedor">
+        <div className={style.contenedorFilterBar}>
         
             <div>
             

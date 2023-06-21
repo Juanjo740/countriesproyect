@@ -28,16 +28,20 @@ const CountryDetail = () => {
     
     return (
         
-        <div className={style.contenedorDetail}>
-            
-            <h2 className={style.contenedorDetail__Titulo}>{`${country.name}`}</h2>
-            <img className={style.contenedorDetail__Bandera} src={country.flags} alt={country.name} /><br/>
-            <h3 className={style.contenedorDetail__Items}>{`Area: ${country.area} km²`}</h3>
-            <h3 className={style.contenedorDetail__Items}>{`Population: ${country.population}`}</h3>
-            <h3 className={style.contenedorDetail__Items}>{`Continent: ${country.continents}`}</h3>
-            <h3 className={style.contenedorDetail__Items}>{`Sub Region: ${country.subregion}`}</h3>
-            <h3 className={style.contenedorDetail__Items}>{`Capital: ${country.capital}`}</h3>
-            
+        <div className={style.contenedor}>
+
+            <div className={style.contenedorDetail}>
+                
+                <h2 className={style.contenedorDetail__Titulo}>{`${country.name}`}</h2>
+                <img className={style.contenedorDetail__Bandera} src={country.flags} alt={country.name} /><br/>
+                <h3 className={style.contenedorDetail__Items}>{`Area: ${country.area} km²`}</h3>
+                <h3 className={style.contenedorDetail__Items}>{`Population: ${country.population}`}</h3>
+                <h3 className={style.contenedorDetail__Items}>{`Continent: ${country.continents}`}</h3>
+                <h3 className={style.contenedorDetail__Items}>{`Sub Region: ${country.subregion}`}</h3>
+                <h3 className={style.contenedorDetail__Items}>{`Capital: ${country.capital}`}</h3>
+                
+            </div>
+
         </div>
     )
 }

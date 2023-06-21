@@ -77,14 +77,6 @@ function App() {
       }
 
       {
-        location.pathname === "/home" ? <FilterBar /> : null
-      }
-
-      {
-        location.pathname === "/home" ? <SearchBar /> : null
-      }
-
-      {
         location.pathname === "/activities" ? <SearchBarActivities /> : null
       }
 

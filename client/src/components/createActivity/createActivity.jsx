@@ -25,6 +25,8 @@ const CreateActivity = () => {
 
     })
 
+    console.log(activity)
+
     const handleChange = (event) => {
         
         setActivity((prevState) => ({
@@ -111,12 +113,17 @@ const CreateActivity = () => {
 
         if(isNaN(Number(activity.duration))){
 
-            errorValidate.duration = 'la duracion debe ser un nombre'
+            errorValidate.duration = 'la duracion debe ser un número'
         }
 
         if(Number(activity.duration) === 0){
 
             errorValidate.duration = 'la actividad no puede durar 0 horas'
+        }
+
+        if(Number(activity.duration) > 120){
+
+            errorValidate.duration = 'el maximo de duración es 120 horas'
         }
 
         setError(errorValidate)
@@ -131,100 +138,103 @@ const CreateActivity = () => {
 
     return (
         
-        <div className="contenedor">
+        <div className={style.contenedor}>
 
-            <form className={style.contenedorForm} onSubmit={handleSubmit}>
+            <div className="contenedor">
 
-            
-
-                    <label htmlFor="name">Nombre de la actividad</label>
-                    <input required="" type="text" name="name" value={activity.name} onChange={handleChange} />
-                    {error.name ? <p> {error.name} </p> : null}
+                <form className={style.contenedorForm} onSubmit={handleSubmit}>
 
                 
-                
-                
 
-                    <label>Horas de duracion</label>
-                    <input required="" type="text" name="duration" value={activity.duration} onChange={handleChange} />
-                    {error.duration ? <p> {error.duration} </p> : null}
+                        <label htmlFor="name">Nombre de la actividad</label>
+                        <input required="" type="text" name="name" value={activity.name} onChange={handleChange} />
+                        {error.name ? <p> {error.name} </p> : null}
 
-                
-               
                     
-                    <select defaultValue="" name="dificult" onChange={handleChange}>
-
-                        <option disabled value=""> Dificultades </option>
-                        <option value="1">Muy facil</option>
-                        <option value="2">Facil</option>
-                        <option value="3">Mediana</option>
-                        <option value="4">Dificil</option>
-                        <option value="5">Extrema</option>
-
-                    </select>
-
-                
-                
-                
-
-                    <select defaultValue="" name="season" onChange={handleChange}>
-
-                        <option disabled value="">Temporadas</option>
-                        <option value="Summer">Verano</option>
-                        <option value="Fall">Otoño</option>
-                        <option value="Winter">Invierno</option>
-                        <option value="Spring">Primavera</option>
-
-                    </select>
-
-                
-
-                    <span>Selecciona un pais</span>
-
-                    <select name="countries" onChange={handleChange}>
                     
-                    {
-                        countriesForActivityOnly.map(({id, name})=>{
-                            
-                            return(
-                                
-                                <option value={id} key={id}> {name} </option>                            
-                
-                            )
-                        })
-                    }
-
-                    </select>
-
-                
                     
-                    {activity.countries.length ? <span>Click para eliminar un pais:</span> : null}
-                   
-                    <div className={style.contenedorForm__Paises}>
 
+                        <label>Horas de duracion</label>
+                        <input required="" type="text" name="duration" value={activity.duration} onChange={handleChange} />
+                        {error.duration ? <p> {error.duration} </p> : null}
 
-                    {
-                        activity.countries ? activity.countries.map((element)=> {
-                            
-                            return(
-                                
-                                <button onClick={(event) => handleClick(event, element)}>{element}</button>
-                                
-                                )
-                                
-                            }) : null
-                        }
-
-                    </div>
+                    
                 
+                        
+                        <select defaultValue="" name="dificult" onChange={handleChange}>
 
-                    <button className={style.contenedorForm__Button}>CREAR</button>
+                            <option disabled value=""> Dificultades </option>
+                            <option value="1">Muy facil</option>
+                            <option value="2">Facil</option>
+                            <option value="3">Mediana</option>
+                            <option value="4">Dificil</option>
+                            <option value="5">Extrema</option>
 
-                
+                        </select>
 
-            </form>
+                    
+                    
+                    
+
+                        <select defaultValue="" name="season" onChange={handleChange}>
+
+                            <option disabled value="">Temporadas</option>
+                            <option value="Summer">Verano</option>
+                            <option value="Fall">Otoño</option>
+                            <option value="Winter">Invierno</option>
+                            <option value="Spring">Primavera</option>
+
+                        </select>
+
+                    
+
+                        <span>Selecciona un pais</span>
+
+                        <select name="countries" onChange={handleChange}>
+                        
+                        {
+                            countriesForActivityOnly.map(({id, name})=>{
+                                
+                                return(
+                                    
+                                    <option value={id} key={id}> {name} </option>                            
+                                    
+                                    )
+                                })
+                            }
+
+                        </select>
+
+                    
+                        
+                        {activity.countries.length ? <span>Click para eliminar un pais:</span> : null}
+                    
+                        <div className={style.contenedorForm__Paises}>
+
+
+                        {
+                            activity.countries ? activity.countries.map((element)=> {
+                                
+                                return(
+                                    
+                                    <button onClick={(event) => handleClick(event, element)}>{element}</button>
+                                    
+                                    )
+                                    
+                                }) : null
+                            }
+
+                        </div>
+                    
+
+                        <button className={style.contenedorForm__Button}>CREAR</button>
+
+                    
+
+                </form>
+            </div>
+
         </div>
-
     )
 
 }

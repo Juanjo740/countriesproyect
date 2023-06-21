@@ -1,0 +1,12 @@
+.contenedorActivityCard {
+
+    background-color: #111;
+    color: white;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
