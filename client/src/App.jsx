@@ -13,6 +13,7 @@ import FilterBar from './components/filterBar/filterBar';
 import ActivitiesPage from './components/activitiesPage/activitiesPage';
 import SearchBarActivities from './components/searchBarActivities/searchBarActivities';
 import CreateActivity from './components/createActivity/createActivity';
+import ErrorPage from './components/errorPage/errorPage';
 
 function App() {
 
@@ -88,7 +89,7 @@ function App() {
         <Route path='/activities' element={ <ActivitiesPage />}></Route>
         <Route path='details/:id' element={ <CountryDetail /> }></Route>
         <Route path='/createActivity' element={<CreateActivity />}></Route>
-        
+        <Route path='*' element={<ErrorPage />}/>
 
       </Routes>
 
