@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import style from "./countryCard.module.css"
 
-const CountryCard = ( {id, name, flags, continents, capital} )=>{
+const CountryCard = ( {id, name, flags, continents, population} )=>{
 
     return (
 
@@ -14,7 +14,7 @@ const CountryCard = ( {id, name, flags, continents, capital} )=>{
             
 
                 <h3>{`${continents}`}</h3>
-                <h3>{`${capital}`}</h3>
+                <h3>{`${population}`}</h3>
 
 
         </div>

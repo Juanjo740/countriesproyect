@@ -49,7 +49,7 @@ const HomePage = () => {
                 <div className={style.contenedorCards}>
 
                     {
-                        allcountries.slice(countriesPerPage * page, (countriesPerPage * page) + countriesPerPage).map(({id, name, continents, capital, flags})=>{
+                        allcountries.slice(countriesPerPage * page, (countriesPerPage * page) + countriesPerPage).map(({id, name, continents, flags, population})=>{
                             return(
                                 
                                 <CountryCard
@@ -58,7 +58,7 @@ const HomePage = () => {
                                 key={id+' '+name}
                                 name={name}
                                 continents={continents}
-                                capital={capital}
+                                population={population}
                                 flags={flags}
                                 />
                                 

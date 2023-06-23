@@ -14,7 +14,7 @@ const ActivitiesPage = () => {
             <div className={style.contenedorActivities}>
             
                 {
-                    allactivities.map(({name, dificult, duration, season, countries}) => {
+                    allactivities.map(({name, dificult, duration, season, Countries}) => {
 
                         return(
 
@@ -26,7 +26,7 @@ const ActivitiesPage = () => {
                                     dificult={dificult}
                                     duration={duration}
                                     season={season}
-                                    countries={countries}
+                                    Countries={Countries}
 
                                 />
 

@@ -49,6 +49,11 @@
     display: flex;
 }
 
+.contenedorSideBarTop__contenedorIcons:hover {
+
+    filter: drop-shadow(0 0 5px white);
+}
+
 .contenedorSideBarBottom__contenedorIcons {
 
     width: 40%;
@@ -62,4 +67,9 @@
     background: linear-gradient(140deg, rgba(12,45,97,1) 0%, rgba(12,67,129,1) 35%, rgb(71, 104, 175) 100%);
     border-radius: 7px;
     display: flex;
+}
+
+.contenedorSideBarBottom__contenedorIcons:hover {
+
+    filter: drop-shadow(0 0 5px white);
 }
