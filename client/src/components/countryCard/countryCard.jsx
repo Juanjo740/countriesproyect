@@ -14,7 +14,7 @@ const CountryCard = ( {id, name, flags, continents, population} )=>{
             
 
                 <h3>{`${continents}`}</h3>
-                <h3>{`${population}`}</h3>
+                <h3>{`población: ${population}`}</h3>
 
 
         </div>
